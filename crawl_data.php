@@ -38,6 +38,7 @@ try
 		}
 	}
 
+	//Get the time
 	$todaydate=time();
 
 	if($update==1)
@@ -73,14 +74,16 @@ try
 
 
 	$icontime=$todaydate-$warntime;
-
+	//Get a list of all channels
 	$tschanarr=$ts3_VirtualServer->channelList();
 
+	//Guardar todos os Cid dentro de uma array
 	foreach($tschanarr as $channel)
 	{
 		$tscid[]=$channel['cid'];
 	}
 
+	//Apagar todos os Icons
 	if($deleteicons==1)
 	{
 		echo'<b>'.$lang['hldelicon'].'</b><br>';
@@ -115,8 +118,8 @@ try
 		$channelid=$channel['cid'];
 		$channelname=$channel['channel_name'];
 		$channelname=htmlspecialchars($channelname, ENT_QUOTES);
-		$userinchannel=$channel['total_clients'];
-		$channelpath=$channel->getPathway();
+		$=$channel['total_clients'];
+		$chauserinchannelnnelpath=$channel->getPathway();
 		$channelpath=htmlspecialchars($channelpath, ENT_QUOTES);
 		
 		echo'<tr><td>'.$lang['cid'].$channelid.' : </td><td>'.$channelname.'</td>';
